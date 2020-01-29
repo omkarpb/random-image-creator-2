@@ -1,6 +1,5 @@
 const { createCanvas } = require('canvas');
-const fs = require('fs')
-const path = require('path');
+
 
 class ImageGenerator {
     constructor(imagePath) {
@@ -21,10 +20,8 @@ class ImageGenerator {
         ctx.arc(90, 65, 5, 0, Math.PI * 2, true);  // Right eye
         ctx.stroke();
 
-        const out = fs.createWriteStream(__dirname + this.imagePath);
-        const stream = canvas.createPNGStream()
-        stream.pipe(out)
-        out.on('finish', () =>  console.log('The PNG file was created.'))
+        const imageBuf = canvas.toBuffer("image/png");
+        return imageBuf;
     }
 }
 
