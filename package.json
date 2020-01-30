@@ -1,6 +1,6 @@
 {
   "name": "random-image-creator-2",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Creates image randomly ",
   "main": "index.js",
   "scripts": {
